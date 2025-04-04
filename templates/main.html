@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Обратная связь</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Форма обратной связи</h1>
+    <form method="post" action="{{ url_for('feedback') }}">
+      <input type="text" name="name" placeholder="Имя" required>
+      <br><br>
+      <input type="email" name="email" placeholder="Email" required>
+      <br><br>
+      <textarea name="message" placeholder="Сообщение" required></textarea>
+      <br><br>
+      <button type="submit">Отправить</button>
+    </form>
+    <hr>
+    <h2>Сообщения:</h2>
+    {% for fb in feedbacks %}
+      <div class="feedback">
+        <p><strong>{{ fb.name }}</strong> ({{ fb.email }})</p>
+        <p>{{ fb.message }}</p>
+      </div>
+      <hr>
+    {% endfor %}
+    <a href="{{ url_for('index') }}" class="button">На главную</a>
+  </div>
+  <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>

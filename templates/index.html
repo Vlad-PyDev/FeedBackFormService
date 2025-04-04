@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Обратная связь – Стартовая страница</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Форма обратной связи</h1>
+    <a href="{{ url_for('feedback') }}" class="button">Перейти к форме</a>
+  </div>
+</body>
+</html>
