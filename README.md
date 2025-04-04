@@ -1,7 +1,7 @@
 # FeedBackFormService
 
 Service for feedback form
-Simple web service for feedback forms on Python with flask and qrcode
+Simple web service for feedback forms on Python with flask and requests
 
 # To Dowload
 
